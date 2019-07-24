@@ -42,13 +42,9 @@ $trabajos = mysqli_query($link, $query);
             //Pido el nombre de la materia
             $materia = mysqli_fetch_array(mysqli_query($link, "SELECT nom FROM materias WHERE idmateria = $idmateria"))[0];
             
-            //Si es otro trabajo, cerrá y abrí otro contenedor, y agregá el titulo de la materia            
-            if ($otra) {
-                echo "</div><div class='container'>";
-                echo "<h2 style='width: 100%;'>$materia</h2>";
-            }
-            //Si es otra es -1 (primer trabajo) imprimí nada más que el titulo de la materia
-            else if($otra == -1) echo "<h2 style='width: 100%;'>$materia</h2>";
+            //Si es otra es -1 (primer trabajo) u otra es verdadera (cambia la materia)
+            //imprimí el título de la materia
+            if($otra == -1 || $otra == true) echo "<h2 style='width: 100%;'>$materia</h2>";
 
             echo "<p class='item'>    
                       <span>$r[2]</span><br>",
