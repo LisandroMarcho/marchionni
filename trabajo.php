@@ -6,10 +6,12 @@ $parse = new Parsedown();
 $error = false;
 
 if(!isset($_GET["idtrabajo"])) $error = "¡Ups! Algo ha fallado... <br> (No se pudo encontrar el trabajo)";
+//Escapa los caracteres especiales de la variable 
 else $idtrabajo = mysqli_real_escape_string($link, $_GET["idtrabajo"]);
 
 //El "@" suprime los errores y alertas
 $archivo = @file_get_contents("./files/$idtrabajo.md");
+//Verifica si hay contenido en el archivo
 if(!$archivo && !strlen($archivo)){
     $error = "¡Ups! Algo ha fallado... <br> (No hay archivo que abrir)";
 }
@@ -42,6 +44,7 @@ if(!$error){
         <?php
         if($error) echo $error;
         else{
+            //Convierto el contenido de Markdown a HTML
             echo $parse->text($archivo);
         }
         ?>
