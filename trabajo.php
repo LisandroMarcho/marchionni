@@ -2,7 +2,7 @@
 include_once("./conx.php");
 include_once("./includes/Parsedown.php");
 
-$parse = new Parsedown();
+$parser = new Parsedown();
 $error = false;
 
 if(!isset($_GET["idtrabajo"])) $error = "¡Ups! Algo ha fallado... <br> (No se pudo encontrar el trabajo)";
@@ -28,12 +28,13 @@ if(!$error){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/prism.css">
     <title><?php echo (!$error ? $trabajo[2] : "¡Ups!"); ?> - Lisandro Marchionni</title>
 </head>
 <body>
@@ -45,9 +46,10 @@ if(!$error){
         if($error) echo $error;
         else{
             //Convierto el contenido de Markdown a HTML
-            echo $parse->text($archivo);
+            echo $parser->text($archivo);
         }
         ?>
     </div>
+    <script src="js/prism.js"></script>
 </body>
 </html>
