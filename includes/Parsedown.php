@@ -523,7 +523,7 @@ class Parsedown
 
             $Block = array(
                 'element' => array(
-                    'name' => 'h' . min(6, $level),
+                    'name' => 'h' . min(6, $level) . ' class="anchor" id="'. $text . '"',
                     'text' => $text,
                     'handler' => 'line',
                 ),
@@ -1147,7 +1147,7 @@ class Parsedown
             return array(
                 'extent' => strlen($matches[0]),
                 'element' => array(
-                    'name' => 'code',
+                    'name' => 'code class="inline-code"',
                     'text' => $text,
                 ),
             );

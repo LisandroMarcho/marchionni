@@ -21,7 +21,7 @@ $trabajos = mysqli_query($link, $query);
 
     </nav>
     <!-- Trabajos -->
-    <div class="container">
+    <div class="container text-center just-center aling-items-center">
     <?php
     if ($trabajos && mysqli_num_rows($trabajos) >= 1) {
         $idmateria = null; 
