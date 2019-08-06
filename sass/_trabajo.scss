@@ -1,0 +1,62 @@
+blockquote {
+  background: $blockquote-color;
+  border-left: solid 3px $top-color;
+  font-style: italic;
+  padding-left: 10px;
+}
+
+p {
+  line-height: 30px;
+}
+
+.md-container {
+  padding: 0 20px;
+  text-align: justify;
+}
+
+.inline-code {
+  background: #f5f2f0;
+  font-size: 16px;
+  padding: 1px 5px;
+}
+
+.sidebar {
+  background: $sidebar-color;
+  bottom: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 50px;
+}
+
+.anclas-container {
+  padding: 0 10px;
+  ul {
+    margin-left: 10px;
+  }
+}
+
+.content-header {
+  font-weight: 500;
+}
+
+@media (max-width: 960px) {
+  blockquote {
+    padding: 0;
+  }
+  .sidebar {
+    bottom: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+  .md-container {
+    max-width: 100%;
+    padding: 0;
+    text-align: justify;
+  }
+  .sm-padding{
+    padding: 0 15px;
+  }
+}

@@ -1265,6 +1265,7 @@ class Parsedown
             'attributes' => array(
                 'href' => null,
                 'title' => null,
+                'target' => '_blank',
             ),
         );
 

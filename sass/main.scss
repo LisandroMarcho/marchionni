@@ -1,6 +1,15 @@
+$monserrat: 'Montserrat', sans-serif;;
+$roboto: 'Roboto', sans-serif;
 $red: #f00;
 $sidebar-color: #f6f6f6;
 $top-color: #2471a3;
+$blockquote-color: #D9E1E2;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@import 'trabajo';
+@import 'header';
 
 * {
   margin: 0;
@@ -8,7 +17,12 @@ $top-color: #2471a3;
   word-wrap: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  font-family: $roboto;
   font-size: 18px;
   margin-top: 50px;
 }
@@ -17,84 +31,15 @@ a {
   color: $top-color;
 }
 
-nav {
-  align-content: center;
-  background: $top-color;
-  height: 50px;
-  left: 0;
-  line-height: 50px;
-  position: fixed;
-  top: 0;
-  transition: linear .2s;
-  width: 100%;
-  ul {
-    list-style: none;
-    margin: 0;
-    li {
-      float: left;
-      a {
-        color: white;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 30px;
-        margin: 10px;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-blockquote {
-  background: #D9E1E2;
-  border-left: solid 3px $top-color;
-  font-style: italic;
-  padding-left: 10px;
-}
-
 ul {
   margin-left: 30px;
 }
 
-p {
-  line-height: 30px;
-}
-
 @for $i from 1 through 6 {
   h#{$i} {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: $monserrat;
     margin: 20px 0 5px;
   }
-}
-
-.inline-code{
-  background: #f5f2f0;
-  font-size: 16px;
-  padding: 1px 5px;
-}
-
-.sidebar {
-  background: $sidebar-color;
-  bottom: 0;
-  overflow-y: auto;
-  position: fixed;
-  top: 50px;
-}
-
-.anclas-container {
-  padding: 0 10px;
-  ul {
-    margin-left: 10px;
-  }
-}
-
-.md-container {
-  margin-left: 250px;
-  padding: 0 20px;
-  text-align: justify;
-}
-
-.container {
-  display: flex;
-  flex-flow: row wrap;
 }
 
 @for $i from 1 through 12 {
@@ -109,6 +54,10 @@ p {
   }
 }
 
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
 
 .text-center {
   text-align: center;
@@ -127,4 +76,36 @@ p {
   height: 150px;
   margin: 10px;
   width: 300px;
+}
+
+.btn-up {
+  visibility: hidden;
+}
+
+@media (max-width: 960px) {
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      width: 100%;
+    }
+  }
+  @for $i from 1 through 12 {
+    .col-push-#{$i} {
+      margin-left: 0;
+    }
+  }
+  .btn-up {
+    background: $sidebar-color;
+    border-radius: 50px;
+    bottom: 20px;
+    font-size: 30px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    visibility: visible;
+    width: 50px;
+    span {
+      line-height: 60px;
+    }
+  }
 }

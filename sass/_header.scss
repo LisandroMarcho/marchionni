@@ -1,0 +1,20 @@
+header {
+  align-content: center;
+  background: $top-color;
+  height: 50px;
+  left: 0;
+  line-height: 50px;
+  position: fixed;
+  top: 0;
+  transition: linear .2s;
+  width: 100%;
+  z-index: 1;
+}
+
+.logo {
+  color: white;
+  font-family: $monserrat;
+  font-size: 25px;
+  margin: 10px;
+  text-decoration: none;
+}

@@ -17,9 +17,9 @@ $trabajos = mysqli_query($link, $query);
 </head>
 
 <body>
-    <nav>
+    <header>
 
-    </nav>
+    </header>
     <!-- Trabajos -->
     <div class="container text-center just-center aling-items-center">
     <?php
